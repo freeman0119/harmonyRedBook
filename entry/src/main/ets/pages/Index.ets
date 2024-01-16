@@ -1,3 +1,5 @@
+import {Home} from '../view/Home'
+
 @Entry
 @Component
 struct Index {
@@ -20,7 +22,7 @@ struct Index {
     Column() {
       Tabs({barPosition: BarPosition.End}) {
         TabContent() {
-          Text('首页内容')
+          Home()
         }.tabBar(this.TabBarBuilder('首页', 0))
 
         TabContent() {
@@ -39,6 +41,7 @@ struct Index {
           Text('我的内容')
         }.tabBar(this.TabBarBuilder('我', 4))
       }
+      .scrollable(false)
       .onChange(index => {
         this.currentIndex = index
       })
